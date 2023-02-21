@@ -35,11 +35,14 @@ class AnnouncementServiceProvider extends ServiceProvider
 
         $this->registerCustomFieldsModels();
 
-        \Assets::add(asset('assets/modules/announcement/plugins/magnific-popup/jquery.magnific-popup.min.js'));
-        \Assets::add(asset('assets/modules/announcement/plugins/magnific-popup/magnific-popup.css'));
-
-        \Assets::add(asset('assets/modules/announcement/js/ann-scripts.js'));
-        \Assets::add(asset('assets/modules/announcement/css/ann-style.css'));
+        $this->app->booted(function () {
+            // the assets packages is loaded after Announcement package
+            // we wait after the application is booted then execute the related code
+            \Assets::add(asset('assets/modules/announcement/plugins/magnific-popup/jquery.magnific-popup.min.js'));
+            \Assets::add(asset('assets/modules/announcement/plugins/magnific-popup/magnific-popup.css'));
+            \Assets::add(asset('assets/modules/announcement/js/ann-scripts.js'));
+            \Assets::add(asset('assets/modules/announcement/css/ann-style.css'));
+        });
 
         $this->registerModulesPackages();
     }
