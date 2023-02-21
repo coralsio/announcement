@@ -13,7 +13,6 @@ class AnnouncementObserverServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
         Announcement::observe(AnnouncementObserver::class);
     }
 }

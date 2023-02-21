@@ -30,10 +30,12 @@ class AnnouncementsTest extends TestCase
         $startDate = Carbon::now()->startOfWeek()->format('Y-m-d');
         $endDate = Carbon::now()->endOfWeek()->format('Y-m-d');
 
-        $response = $this->post('announcements', [
+        $response = $this->post(
+            'announcements',
+            [
                 'title' => 'announcement',
                 'starts_at' => $startDate,
-                'ends_at' => $endDate
+                'ends_at' => $endDate,
             ]
         );
 
@@ -45,7 +47,7 @@ class AnnouncementsTest extends TestCase
 
         $this->assertDatabaseHas('announcements', [
             'starts_at' => $this->announcement->starts_at,
-            'ends_at' => $this->announcement->ends_at
+            'ends_at' => $this->announcement->ends_at,
         ]);
     }
 
@@ -81,14 +83,14 @@ class AnnouncementsTest extends TestCase
             $response = $this->put('announcements/' . $this->announcement->hashed_id, [
                 'title' => $this->announcement->title,
                 'starts_at' => $this->announcement->starts_at,
-                'ends_at' => $this->announcement->ends_at
+                'ends_at' => $this->announcement->ends_at,
             ]);
 
             $response->assertRedirect('announcements');
             $this->assertDatabaseHas('announcements', [
                 'title' => $this->announcement->title,
                 'starts_at' => $this->announcement->starts_at,
-                'ends_at' => $this->announcement->ends_at
+                'ends_at' => $this->announcement->ends_at,
             ]);
         }
 
@@ -108,7 +110,7 @@ class AnnouncementsTest extends TestCase
             $this->assertDatabaseMissing('announcements', [
                 'title' => $this->announcement->title,
                 'starts_at' => $this->announcement->starts_at,
-                'ends_at' => $this->announcement->ends_at
+                'ends_at' => $this->announcement->ends_at,
             ]);
         }
         $this->assertTrue(true);

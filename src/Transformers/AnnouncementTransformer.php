@@ -32,7 +32,7 @@ class AnnouncementTransformer extends BaseTransformer
             'show_in_url' => $announcement->show_in_url,
             'created_at' => format_date($announcement->created_at),
             'updated_at' => format_date($announcement->updated_at),
-            'action' => $this->actions($announcement)
+            'action' => $this->actions($announcement),
         ];
 
         return parent::transformResponse($transformedArray);

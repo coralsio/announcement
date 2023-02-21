@@ -12,9 +12,9 @@ class AnnouncementDemoDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('announcements')->insert(array(
+        \DB::table('announcements')->insert([
             0 =>
-                array(
+                [
                     'id' => 1,
                     'title' => 'This Popup is a Demo of Laraship Announcement Module',
                     'link_title' => 'GO TO STORE',
@@ -44,16 +44,16 @@ class AnnouncementDemoDatabaseSeeder extends Seeder
                     'ends_at' => '2020-08-10',
                     'show_immediately' => 1,
                     'is_public' => 1,
-                    'show_in_url' => NULL,
-                    'properties' => NULL,
+                    'show_in_url' => null,
+                    'properties' => null,
                     'created_by' => 1,
                     'updated_by' => 1,
-                    'deleted_at' => NULL,
+                    'deleted_at' => null,
                     'created_at' => '2018-08-09 07:01:48',
                     'updated_at' => '2018-08-09 08:58:24',
-                ),
+                ],
             1 =>
-                array(
+                [
                     'id' => 2,
                     'title' => '50% Discount Summer Sale on All Laraship Products',
                     'link_title' => 'Claim Your Discount',
@@ -94,15 +94,15 @@ class AnnouncementDemoDatabaseSeeder extends Seeder
                     'ends_at' => '2018-09-08',
                     'show_immediately' => 0,
                     'is_public' => 0,
-                    'show_in_url' => NULL,
-                    'properties' => NULL,
+                    'show_in_url' => null,
+                    'properties' => null,
                     'created_by' => 1,
                     'updated_by' => 1,
-                    'deleted_at' => NULL,
+                    'deleted_at' => null,
                     'created_at' => '2018-08-10 08:24:24',
                     'updated_at' => '2018-08-10 14:29:28',
-                ),
-        ));
+                ],
+        ]);
         $announcement = Announcement::find(1);
 
         $announcement->addMediaFromUrl('https://www.laraship.com/wp-content/uploads/2018/05/laraship-subcription.png')
@@ -114,6 +114,5 @@ class AnnouncementDemoDatabaseSeeder extends Seeder
         $announcement->addMediaFromUrl('https://www.laraship.com/wp-content/uploads/2018/08/laraship_laravel_tablet-e1533376014700.png')
             ->withCustomProperties(['root' => 'demo_announcement'])
             ->toMediaCollection($announcement->mediaCollectionName);
-
     }
 }

@@ -15,8 +15,8 @@ class AnnouncementEventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         Login::class => [
-            ShowOnLoginAnnouncements::class
-        ]
+            ShowOnLoginAnnouncements::class,
+        ],
     ];
 
     /**

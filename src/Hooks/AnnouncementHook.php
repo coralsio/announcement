@@ -6,6 +6,5 @@ class AnnouncementHook
 {
     public function show_in_url_announcements()
     {
-
     }
 }

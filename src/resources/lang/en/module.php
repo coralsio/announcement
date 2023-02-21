@@ -3,6 +3,6 @@
 return [
     'announcement' => [
         'title' => 'Announcements',
-        'title_singular' => 'Announcement'
-    ]
+        'title_singular' => 'Announcement',
+    ],
 ];

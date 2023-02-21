@@ -14,5 +14,5 @@ return [
         'show_in_url' => 'Show in URL',
         'show_in_url_help' => 'No need add the domain name only use page slug for home use /',
         'roles' => 'Shared to Roles',
-    ]
+    ],
 ];

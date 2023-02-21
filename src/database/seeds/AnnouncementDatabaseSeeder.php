@@ -7,7 +7,7 @@ use Corals\Modules\Announcement\Models\Announcement;
 use Corals\Settings\Models\Setting;
 use Corals\User\Models\Permission;
 use Illuminate\Database\Seeder;
-use \Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class AnnouncementDatabaseSeeder extends Seeder
 {

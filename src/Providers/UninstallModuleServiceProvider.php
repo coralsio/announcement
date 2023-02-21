@@ -9,7 +9,7 @@ use Corals\Modules\Announcement\database\seeds\AnnouncementDatabaseSeeder;
 class UninstallModuleServiceProvider extends BaseUninstallModuleServiceProvider
 {
     protected $migrations = [
-        AnnouncementTables::class
+        AnnouncementTables::class,
     ];
 
     protected function providerBooted()

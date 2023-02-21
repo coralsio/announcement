@@ -6,7 +6,6 @@ use Corals\Modules\Announcement\Models\Announcement;
 
 class AnnouncementObserver
 {
-
     /**
      * @param Announcement $announcement
      */

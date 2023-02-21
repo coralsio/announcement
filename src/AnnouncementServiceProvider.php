@@ -22,7 +22,6 @@ class AnnouncementServiceProvider extends ServiceProvider
      *
      * @return void
      */
-
     public function boot()
     {
         // Load view

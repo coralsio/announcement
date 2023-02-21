@@ -21,8 +21,10 @@ class AnnouncementsController extends BaseController
         $this->title = 'Announcement::module.announcement.title';
         $this->title_singular = 'Announcement::module.announcement.title_singular';
 
-        $this->corals_middleware_except = array_merge($this->corals_middleware_except,
-            ['show', 'markAnnouncementAsRead', 'getUnreadAnnouncements']);
+        $this->corals_middleware_except = array_merge(
+            $this->corals_middleware_except,
+            ['show', 'markAnnouncementAsRead', 'getUnreadAnnouncements']
+        );
 
         parent::__construct();
     }
@@ -190,8 +192,13 @@ class AnnouncementsController extends BaseController
     {
         $currentURL = $request->get('current_url');
 
-        $announcements = \Announcement::unreadAnnouncements(user(), false, null,
-            ['show_in_url' => $currentURL], ['show_immediately' => true]);
+        $announcements = \Announcement::unreadAnnouncements(
+            user(),
+            false,
+            null,
+            ['show_in_url' => $currentURL],
+            ['show_immediately' => true]
+        );
 
         $unread_announcements = [];
 

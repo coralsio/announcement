@@ -8,13 +8,17 @@ use Corals\Foundation\Traits\ModelPropertiesTrait;
 use Corals\Foundation\Transformers\PresentableTrait;
 use Corals\User\Models\User;
 use Spatie\Activitylog\Traits\LogsActivity;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Permission\Traits\HasRoles;
 
 class Announcement extends BaseModel implements HasMedia
 {
-    use PresentableTrait, LogsActivity, ModelPropertiesTrait, HasRoles, InteractsWithMedia ;
+    use PresentableTrait;
+    use LogsActivity;
+    use ModelPropertiesTrait;
+    use HasRoles;
+    use InteractsWithMedia ;
 
     public $guard_name = 'web';
 
@@ -26,7 +30,7 @@ class Announcement extends BaseModel implements HasMedia
         'starts_at' => 'date',
         'ends_at' => 'date',
         'show_immediately' => 'boolean',
-        'is_public' => 'boolean'
+        'is_public' => 'boolean',
     ];
 
     /**
@@ -66,7 +70,7 @@ class Announcement extends BaseModel implements HasMedia
 
         $this->tracking()->create([
             'user_id' => $user->id,
-            'read_at' => Carbon::now()
+            'read_at' => Carbon::now(),
         ]);
     }
 

@@ -6,5 +6,5 @@ return [
             'presenter' => \Corals\Modules\Announcement\Transformers\AnnouncementPresenter::class,
             'resource_url' => 'announcements',
         ],
-    ]
+    ],
 ];

@@ -3,8 +3,8 @@
 namespace Corals\Modules\Announcement\Policies;
 
 use Corals\Foundation\Policies\BasePolicy;
-use Corals\User\Models\User;
 use Corals\Modules\Announcement\Models\Announcement;
+use Corals\User\Models\User;
 
 class AnnouncementPolicy extends BasePolicy
 {
@@ -19,6 +19,7 @@ class AnnouncementPolicy extends BasePolicy
         if ($user->can('Announcement::announcement.view')) {
             return true;
         }
+
         return false;
     }
 
@@ -41,6 +42,7 @@ class AnnouncementPolicy extends BasePolicy
         if ($user->can('Announcement::announcement.update')) {
             return true;
         }
+
         return false;
     }
 
@@ -54,6 +56,7 @@ class AnnouncementPolicy extends BasePolicy
         if ($user->can('Announcement::announcement.delete')) {
             return true;
         }
+
         return false;
     }
 }

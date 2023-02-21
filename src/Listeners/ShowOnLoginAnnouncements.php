@@ -2,7 +2,6 @@
 
 namespace Corals\Modules\Announcement\Listeners;
 
-
 use Corals\Modules\Announcement\Facades\Announcement;
 use Illuminate\Auth\Events\Login;
 
@@ -28,7 +27,7 @@ class ShowOnLoginAnnouncements
         }
 
         \JavaScript::put([
-            'show_announcements' => $show_announcements
+            'show_announcements' => $show_announcements,
         ]);
     }
 }

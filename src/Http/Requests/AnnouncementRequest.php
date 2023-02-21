@@ -36,7 +36,7 @@ class AnnouncementRequest extends BaseRequest
                 'ends_at' => 'required|date|after_or_equal:starts_at',
                 'content' => '',
                 'image' => 'image|max:' . maxUploadFileSize(),
-                'link' => 'max:255'
+                'link' => 'max:255',
             ]);
         }
 

@@ -22,11 +22,12 @@ class AnnouncementMenuDatabaseSeeder extends Seeder
             'description' => 'Announcement Menu Item',
             'icon' => 'fa fa-bell-o',
             'target' => null, 'roles' => '["1"]',
-            'order' => 0
+            'order' => 0,
         ]);
 
         // seed subscriptions children menu
-        \DB::table('menus')->insert([
+        \DB::table('menus')->insert(
+            [
                 [
                     'parent_id' => $announcement_menu_id,
                     'key' => null,
@@ -36,7 +37,7 @@ class AnnouncementMenuDatabaseSeeder extends Seeder
                     'description' => 'Announcements List Menu Item',
                     'icon' => 'fa fa-bell-o',
                     'target' => null, 'roles' => '["1"]',
-                    'order' => 0
+                    'order' => 0,
                 ],
             ]
         );
