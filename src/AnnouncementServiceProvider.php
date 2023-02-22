@@ -14,7 +14,13 @@ use Illuminate\Foundation\AliasLoader;
 
 class AnnouncementServiceProvider extends BasePackageServiceProvider
 {
+    /**
+     * @var
+     */
     protected $defer = true;
+    /**
+     * @var
+     */
     protected $packageCode = 'corals-announcement';
 
     /**
