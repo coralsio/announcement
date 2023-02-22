@@ -70,7 +70,7 @@ class AnnouncementServiceProvider extends BasePackageServiceProvider
         Settings::addCustomFieldModel(AnnouncementModel::class);
     }
 
-    protected function registerModulesPackages()
+    public function registerModulesPackages()
     {
         Modules::addModulesPackages('corals/announcement');
     }
