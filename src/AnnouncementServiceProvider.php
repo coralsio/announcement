@@ -2,27 +2,27 @@
 
 namespace Corals\Modules\Announcement;
 
+use Corals\Foundation\Providers\BasePackageServiceProvider;
 use Corals\Modules\Announcement\Facades\Announcement;
 use Corals\Modules\Announcement\Models\Announcement as AnnouncementModel;
 use Corals\Modules\Announcement\Providers\AnnouncementAuthServiceProvider;
-use Corals\Modules\Announcement\Providers\AnnouncementEventServiceProvider;
 use Corals\Modules\Announcement\Providers\AnnouncementObserverServiceProvider;
 use Corals\Modules\Announcement\Providers\AnnouncementRouteServiceProvider;
 use Corals\Settings\Facades\Modules;
 use Corals\Settings\Facades\Settings;
 use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\ServiceProvider;
 
-class AnnouncementServiceProvider extends ServiceProvider
+class AnnouncementServiceProvider extends BasePackageServiceProvider
 {
     protected $defer = true;
+    protected $packageCode = 'corals-announcement';
 
     /**
      * Bootstrap the application events.
      *
      * @return void
      */
-    public function boot()
+    public function bootPackage()
     {
         // Load view
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'Announcement');
@@ -43,8 +43,6 @@ class AnnouncementServiceProvider extends ServiceProvider
             \Assets::add(asset('assets/modules/announcement/js/ann-scripts.js'));
             \Assets::add(asset('assets/modules/announcement/css/ann-style.css'));
         });
-
-        $this->registerModulesPackages();
     }
 
     /**
@@ -52,7 +50,7 @@ class AnnouncementServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function registerPackage()
     {
         $this->mergeConfigFrom(__DIR__ . '/config/announcement.php', 'announcement');
 
