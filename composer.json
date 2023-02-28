@@ -27,7 +27,6 @@
         "laravel/pint": "^1.0"
     },
     "require": {
-        "laravel-notification-channels/twilio": "^3.1"
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
