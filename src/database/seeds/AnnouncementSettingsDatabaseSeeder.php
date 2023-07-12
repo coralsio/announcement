@@ -14,18 +14,18 @@ class AnnouncementSettingsDatabaseSeeder extends Seeder
      */
     public function run()
     {
-//        \DB::table('settings')->insert([
-//            [
-//                'code' => 'announcement_setting',
-//                'type' => 'TEXT',
-//                'category' => 'Announcement',
-//                'label' => 'Announcement setting',
-//                'value' => 'announcement',
-//                'editable' => 1,
-//                'hidden' => 0,
-//                'created_at' => Carbon::now(),
-//                'updated_at' => Carbon::now(),
-//            ]
-//        ]);
+        //        \DB::table('settings')->insert([
+        //            [
+        //                'code' => 'announcement_setting',
+        //                'type' => 'TEXT',
+        //                'category' => 'Announcement',
+        //                'label' => 'Announcement setting',
+        //                'value' => 'announcement',
+        //                'editable' => 1,
+        //                'hidden' => 0,
+        //                'created_at' => Carbon::now(),
+        //                'updated_at' => Carbon::now(),
+        //            ]
+        //        ]);
     }
 }

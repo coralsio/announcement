@@ -37,7 +37,7 @@ class AnnouncementServiceProvider extends BasePackageServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'Announcement');
 
         // Load migrations
-//        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        //        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
         $this->registerCustomFieldsModels();
 
@@ -63,7 +63,7 @@ class AnnouncementServiceProvider extends BasePackageServiceProvider
         $this->app->register(AnnouncementRouteServiceProvider::class);
         $this->app->register(AnnouncementAuthServiceProvider::class);
         $this->app->register(AnnouncementObserverServiceProvider::class);
-//        $this->app->register(AnnouncementEventServiceProvider::class);
+        //        $this->app->register(AnnouncementEventServiceProvider::class);
 
         $this->app->booted(function () {
             $loader = AliasLoader::getInstance();
