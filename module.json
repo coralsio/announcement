@@ -6,7 +6,7 @@
     "description": "Starter Package",
     "namespace": "Corals\\Modules\\Announcement\\",
     "provider": "AnnouncementServiceProvider",
-    "version": "5.1",
+    "version": "10.0.0",
     "load_order": "900",
     "folder": "Announcement",
     "autoload": "psr-4",
